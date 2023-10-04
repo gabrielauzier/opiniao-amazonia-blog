@@ -7,7 +7,7 @@ interface ScrollViewProps {
 
 export function ScrollView({ children }: ScrollViewProps) {
   return (
-    <ScrollArea.Root className="mt-6 h-[80vh] w-full scroll-mr-2 overflow-hidden">
+    <ScrollArea.Root className="mt-6 w-full scroll-mr-2 overflow-hidden">
       <ScrollArea.Viewport className="h-full w-full">
         {children}
       </ScrollArea.Viewport>

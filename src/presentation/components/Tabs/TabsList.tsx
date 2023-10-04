@@ -3,7 +3,6 @@
 import * as Tabs from '@radix-ui/react-tabs'
 import { TabItem } from './TabItem'
 import { ReactElement, useState } from 'react'
-import { ScrollView } from '../ScrollView'
 
 const tabId = (input: string) => input.trim().toLowerCase().replace(/\s+/g, '-')
 
@@ -19,7 +18,7 @@ export function TabsList({ items }: TabsListProps) {
 
   return (
     <Tabs.Root value={currentTab} onValueChange={setCurrentTab}>
-      <Tabs.List className="mt-6 flex w-full items-center gap-4 border-b border-zinc-200">
+      <Tabs.List className="flex w-full items-center gap-4 border-b border-zinc-200">
         {items.map((item) => (
           <TabItem
             key={tabId(item.title)}
@@ -31,7 +30,7 @@ export function TabsList({ items }: TabsListProps) {
       </Tabs.List>
       {items.map((item) => (
         <Tabs.Content key={tabId(item.title)} value={tabId(item.title)}>
-          <ScrollView>{item.content}</ScrollView>
+          {item.content}
         </Tabs.Content>
       ))}
     </Tabs.Root>

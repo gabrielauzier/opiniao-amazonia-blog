@@ -1,4 +1,3 @@
-import { Logo } from '@/presentation/assets/Logo'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'

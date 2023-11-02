@@ -1,16 +1,13 @@
-import './globals.css'
+import '@/presentation/styles/globals.css'
 import type { Metadata } from 'next'
-import { Poppins } from 'next/font/google'
-import { Aside } from '@/presentation/components/Aside'
-import { Switch } from '@/presentation/components/Aside/Switch'
-import { SocialMedia } from '@/presentation/components/Aside/SocialMedia'
+import { Inter } from 'next/font/google'
+import { Header } from '@/presentation/components/Header'
 
-// const inter = Inter({ subsets: ['latin'] })
-const poppins = Poppins({ weight: ['400', '500', '700'], subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Blog | Next Tailwind',
-  description: 'Blog app made with Next.js and Tailwind CSS',
+  title: 'Opinião Amazônia | Início',
+  description: 'Blog de opinião',
 }
 
 export default function RootLayout({
@@ -19,20 +16,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="antialiased">
-      <body className={poppins.className}>
-        <div className="h-[100vh] w-[100vw] overflow-y-auto">
-          <Aside />
-          <div className="m-auto w-full px-[512px]">
-            <main className="m-auto h-full w-full min-w-[900px] max-w-body pt-8">
-              {children}
-            </main>
-            <div></div>
-          </div>
-          <div className="absolute right-0 top-0 flex h-full flex-col items-end justify-between px-12 py-8">
-            <Switch />
-            <SocialMedia />
-          </div>
+    <html lang="en" className="overflow-x-hidden">
+      <body className={inter.className}>
+        <div className="relative h-[100vh] w-[100vw]">
+          <Header />
+          <main>{children}</main>
         </div>
       </body>
     </html>

@@ -18,6 +18,8 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-icons": "^4.11.0",
+    "tailwind-merge": "^2.0.0",
     "tailwind-variants": "^0.1.14"
   },
   "devDependencies": {

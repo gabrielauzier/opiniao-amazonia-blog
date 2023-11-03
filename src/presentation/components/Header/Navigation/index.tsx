@@ -1,11 +1,13 @@
+import { usePathname } from 'next/navigation'
 import { twMerge } from 'tailwind-merge'
 
 interface NavBarProps {
   isBackgroundTransparent: boolean
-  currentPath: string
 }
 
-export function NavBar({ isBackgroundTransparent, currentPath }: NavBarProps) {
+export function NavBar({ isBackgroundTransparent }: NavBarProps) {
+  const currentPath = usePathname()
+
   return (
     <nav
       className={twMerge(

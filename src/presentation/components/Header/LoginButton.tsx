@@ -1,12 +1,15 @@
 import { Search } from 'lucide-react'
 import { twMerge } from 'tailwind-merge'
 import { usePathname } from 'next/navigation'
+import { ComponentProps } from 'react'
 
-export function LoginButton() {
+type LoginButtonProps = ComponentProps<'button'>
+
+export function LoginButton(props: LoginButtonProps) {
   const currentPath = usePathname()
 
   return (
-    <div className="flex items-center gap-6">
+    <div className="hidden items-center gap-6 lg:flex">
       <Search />
       <button
         className={twMerge(
@@ -14,6 +17,7 @@ export function LoginButton() {
           currentPath === '/'
             ? 'bg-zinc-900 text-zinc-100'
             : 'bg-zinc-100 text-zinc-700',
+          props.className,
         )}
       >
         Entrar

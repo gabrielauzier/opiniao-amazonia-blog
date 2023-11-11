@@ -7,6 +7,7 @@ import { twMerge } from 'tailwind-merge'
 import { LoginButton } from './LoginButton'
 import { NavBar } from './Navigation'
 import { Logo } from './Logo'
+import { Menu } from 'lucide-react'
 
 export function Header() {
   const [isNavbarTransparent, setIsNavbarTransparent] = useState(true)
@@ -27,7 +28,7 @@ export function Header() {
   return (
     <header
       className={twMerge(
-        'fixed top-0 z-50 hidden h-header w-full lg:block',
+        'fixed top-0 z-50 h-header w-full px-5 lg:block',
         !isNavbarTransparent && currentPath === '/'
           ? 'animate-slideDownAndFade bg-white shadow-md'
           : 'bg-transparent',
@@ -45,6 +46,10 @@ export function Header() {
         <Logo />
         <NavBar isBackgroundTransparent={isNavbarTransparent} />
         <LoginButton />
+
+        <button className="lg:hidden">
+          <Menu className="h-8 w-8 text-zinc-400" />
+        </button>
       </div>
     </header>
   )

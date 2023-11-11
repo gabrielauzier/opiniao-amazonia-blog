@@ -10,10 +10,9 @@ export function Home() {
     <>
       <Banner />
       <SocialMediaContainer />
-      <PostList />
+      <PostList posts={[]} />
       <Contact />
       <TopCategories />
-      <Footer />
     </>
   )
 }

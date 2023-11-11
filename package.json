@@ -6,13 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "api-dev": "json-server --watch --delay 750 --port 2998 ./public/mocks/db.json",
+    "api-create": "npx tsx public/mocks/generate-db.ts"
   },
   "dependencies": {
+    "@faker-js/faker": "^8.2.0",
+    "@radix-ui/react-collapsible": "^1.0.3",
     "@radix-ui/react-scroll-area": "^1.0.5",
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-switch": "^1.0.3",
     "@radix-ui/react-tabs": "^1.0.4",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "axios": "^1.6.0",
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.279.0",
     "next": "latest",
@@ -34,6 +40,7 @@
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.4",
     "tailwindcss": "latest",
+    "tsx": "^3.14.0",
     "typescript": "latest"
   }
 }

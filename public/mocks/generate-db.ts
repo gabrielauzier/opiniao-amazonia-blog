@@ -75,6 +75,7 @@ function generateRandomPost(): PostModel {
   const slug = faker.lorem.slug()
   return {
     id: faker.string.uuid(),
+    content: faker.lorem.paragraphs(10),
     slug,
     title: titleCase(faker.lorem.words({ min: 15, max: 20 })),
     author: generateRandomAuthor(),

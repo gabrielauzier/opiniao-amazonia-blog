@@ -8,10 +8,15 @@
     "start": "next start",
     "lint": "next lint",
     "api-dev": "json-server --watch --delay 750 --port 2998 ./public/mocks/db.json",
-    "api-create": "npx tsx public/mocks/generate-db.ts"
+    "api-create": "npx tsx public/mocks/generate-db.ts",
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
     "@faker-js/faker": "^8.2.0",
+    "@prismicio/client": "^7.3.1",
+    "@prismicio/helpers": "^2.3.9",
+    "@prismicio/next": "^1.4.0",
+    "@prismicio/react": "^2.7.3",
     "@radix-ui/react-collapsible": "^1.0.3",
     "@radix-ui/react-scroll-area": "^1.0.5",
     "@radix-ui/react-select": "^2.0.0",
@@ -30,6 +35,7 @@
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.1.0",
+    "@slicemachine/adapter-next": "^0.3.24",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
@@ -39,6 +45,7 @@
     "postcss": "latest",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.4",
+    "slice-machine-ui": "^1.19.2",
     "tailwindcss": "latest",
     "tsx": "^3.14.0",
     "typescript": "latest"

@@ -6,6 +6,7 @@ const nextConfig = {
       'cloudflare-ipfs.com',
       'avatars.githubusercontent.com',
       'github.com',
+      'images.prismic.io'
     ],
   },
   eslint: {

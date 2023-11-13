@@ -1,4 +1,4 @@
-import { PostPreviewModel } from "../models";
+import { PostPreviewModel } from '../models'
 
 export namespace GetAllPosts {
   export interface Params {
@@ -8,7 +8,6 @@ export namespace GetAllPosts {
     posts: PostPreviewModel[]
   }
 }
-
 
 export interface AbstractGetAllPostsUsecase {
   execute(params?: GetAllPosts.Params): Promise<GetAllPosts.Result>

@@ -1,4 +1,4 @@
-import { PostModel } from "../models";
+import { PostModel } from '../models'
 
 export namespace GetSinglePost {
   export interface Params {

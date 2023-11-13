@@ -1,6 +1,4 @@
 import { PostModel } from '@/domain/models'
-import { api } from '@/main/services/api'
-import next from 'next'
 
 namespace FetchPosts {
   export interface Params {

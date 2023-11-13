@@ -1,9 +1,9 @@
-import { PostModel } from '@/domain/models'
-import { faker } from '@faker-js/faker'
+import '@/presentation/styles/post.css'
+
+import { PostModel, PostPreviewModel } from '@/domain/models'
 import Image from 'next/image'
 import { LuChevronRight } from 'react-icons/lu'
-import { TextUtils } from '@/main/utils'
-import { Clock, BarChart2, Facebook } from 'lucide-react'
+import { Clock, BarChart2 } from 'lucide-react'
 
 import FacebookIcon from '@/presentation/assets/Facebook'
 import TwitterIcon from '@/presentation/assets/Twitter'
@@ -18,7 +18,7 @@ import { Newsletter } from './Newsletter'
 
 interface PostDetailsProps {
   post: PostModel
-  topPosts: PostModel[]
+  topPosts: PostPreviewModel[]
 }
 
 export function PostDetails({ post, topPosts }: PostDetailsProps) {
@@ -80,7 +80,8 @@ export function PostDetails({ post, topPosts }: PostDetailsProps) {
               </div>
             </div>
 
-            <div className="mt-7 flex flex-col gap-4 px-7 text-zinc-600 lg:mt-14 lg:px-14">
+            {/* excerpt + tabela de conteúdos */}
+            {/* <div className="mt-7 flex flex-col gap-4 px-7 text-zinc-600 lg:mt-14 lg:px-14">
               <p>{faker.lorem.paragraphs(1)}</p>
               <div className="mt-7 border-y py-12">
                 <strong className="font-mono font-light tracking-[0.150rem] text-zinc-700">
@@ -113,9 +114,9 @@ export function PostDetails({ post, topPosts }: PostDetailsProps) {
                   </ul>
                 </span>
               </div>
-            </div>
+            </div> */}
 
-            <div className="mt-7 flex flex-col gap-4 px-7 text-zinc-600 lg:mt-14 lg:px-14">
+            {/* <div className="mt-7 flex flex-col gap-4 px-7 text-zinc-600 lg:mt-14 lg:px-140">
               <h3 className="mb-4 mt-7 text-2xl text-zinc-800">
                 {TextUtils.titleCase(faker.lorem.sentences(1))}
               </h3>
@@ -137,7 +138,12 @@ export function PostDetails({ post, topPosts }: PostDetailsProps) {
               <p>{faker.lorem.paragraphs(2)}</p>
               <p>{faker.lorem.paragraphs(6)}</p>
               <p>{faker.lorem.paragraphs(9)}</p>
-            </div>
+            </div> */}
+
+            <div
+              className="lg:px-140 mt-7 flex flex-col gap-4 px-7 text-zinc-600 lg:mt-14"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
 
             <Author />
 

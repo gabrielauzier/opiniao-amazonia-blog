@@ -1,4 +1,4 @@
-import { getAllPosts, getSinglePost } from '@/presentation/hooks/use-posts'
+import { makePostsUsecases } from '@/main/factories/usecases'
 import { PostDetails } from '@/presentation/pages/post-details'
 
 interface PostPageProps {
@@ -6,14 +6,17 @@ interface PostPageProps {
 }
 
 export default async function PostPage({ params }: PostPageProps) {
-  const { post } = await getSinglePost({ slug: params.slug })
-  const { posts } = await getAllPosts({ limit: 4 })
+  const { getAllPostsCommand, getPostByIDCommand } = makePostsUsecases()
+
+  const { posts } = await getAllPostsCommand.execute()
+  const { post } = await getPostByIDCommand.execute({ id: params.slug })
 
   return <PostDetails post={post} topPosts={posts} />
 }
 
 export async function generateStaticParams() {
-  const { posts } = await getAllPosts({ limit: 10 })
+  const { getAllPostsCommand } = makePostsUsecases()
+  const { posts } = await getAllPostsCommand.execute()
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -25,10 +28,11 @@ export async function generateMetadata({
 }: {
   params: { slug: string }
 }) {
-  const {
-    post: { title },
-  } = await getSinglePost({ slug })
-  return {
-    title,
-  }
+  // const {
+  //   post: { title },
+  // } = await getSinglePost({ slug })
+
+  const { getPostByIDCommand } = makePostsUsecases()
+  const { post } = await getPostByIDCommand.execute({ id: slug })
+  return { title: post.title }
 }

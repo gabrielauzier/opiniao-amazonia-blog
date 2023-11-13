@@ -1,10 +1,10 @@
 'use client'
 
 import { PostList } from '../home/sections/PostList'
-import { PostModel } from '@/domain/models'
+import { PostPreviewModel } from '@/domain/models'
 
 interface PostsProps {
-  posts: PostModel[]
+  posts: PostPreviewModel[]
 }
 
 export function Posts({ posts }: PostsProps) {

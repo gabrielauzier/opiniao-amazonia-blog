@@ -3,14 +3,18 @@ import { TopCategories } from './sections/TopCategories'
 import { PostList } from './sections/PostList'
 import { Contact } from './sections/Contact'
 import { Banner } from './sections/Banner'
-import { Footer } from '@/presentation/components/Footer'
+import { PostPreviewModel } from '@/domain/models'
 
-export function Home() {
+interface HomeProps {
+  posts: PostPreviewModel[]
+}
+
+export function Home({ posts }: HomeProps) {
   return (
     <>
       <Banner />
       <SocialMediaContainer />
-      <PostList posts={[]} />
+      <PostList posts={posts} />
       <Contact />
       <TopCategories />
     </>

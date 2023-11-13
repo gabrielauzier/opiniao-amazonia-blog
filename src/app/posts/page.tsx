@@ -1,8 +1,9 @@
-import { getAllPosts } from '@/presentation/hooks/use-posts'
+import { makePostsUsecases } from '@/main/factories/usecases'
 import { Posts } from '@/presentation/pages/posts'
 
 export default async function PostsPage() {
-  const { posts } = await getAllPosts({ limit: 10 })
+  const { getAllPostsCommand } = makePostsUsecases()
+  const { posts } = await getAllPostsCommand.execute()
 
   return <Posts posts={posts} />
 }

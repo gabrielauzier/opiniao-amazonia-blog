@@ -13,6 +13,8 @@ export function Header() {
   const [isNavbarTransparent, setIsNavbarTransparent] = useState(true)
   const currentPath = usePathname()
 
+  const pageThatHasBanner = currentPath === '/' || currentPath === '/about'
+
   function handleNavbarBackgroundChanging() {
     if (window.scrollY >= 80) {
       setIsNavbarTransparent(false)
@@ -29,18 +31,18 @@ export function Header() {
     <header
       className={twMerge(
         'fixed top-0 z-50 h-header w-full px-5 lg:block',
-        !isNavbarTransparent && currentPath === '/'
+        !isNavbarTransparent && pageThatHasBanner
           ? 'animate-slideDownAndFade bg-white shadow-md'
           : 'bg-transparent',
-        currentPath !== '/' &&
+        !pageThatHasBanner &&
           'animate-slideDownAndFade bg-zinc-900 text-zinc-200',
       )}
     >
       <div
         className={twMerge(
           'mx-auto flex h-header max-w-header items-center justify-between bg-transparent text-zinc-200 2xl:text-xl',
-          !isNavbarTransparent && currentPath === '/' && 'text-zinc-700',
-          currentPath !== '/' && 'text-zinc-200',
+          !isNavbarTransparent && pageThatHasBanner && 'text-zinc-700',
+          !pageThatHasBanner && 'text-zinc-200',
         )}
       >
         <Logo />

@@ -19,10 +19,10 @@ export function NavBar({ isBackgroundTransparent = false }: NavBarProps) {
         currentPath !== '/' && 'text-zinc-200',
       )}
     >
-      <NavItem>DESTAQUES</NavItem>
-      <NavItem>QUEM SOMOS</NavItem>
-      <NavItem>CRÉDITOS</NavItem>
-      <NavItem>CATEGORIAS</NavItem>
+      <NavItem href="/">DESTAQUES</NavItem>
+      <NavItem href="/about">SOBRE NÓS</NavItem>
+      <NavItem href="/">CRÉDITOS</NavItem>
+      <NavItem href="/">CATEGORIAS</NavItem>
     </nav>
   )
 }

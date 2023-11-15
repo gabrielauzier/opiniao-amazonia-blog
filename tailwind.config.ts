@@ -11,6 +11,8 @@ const config: Config = {
 
       backgroundImage: {
         hero: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.05)), url('/rio.jpg')",
+        banner2:
+          "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('/encontro-das-aguas.jpg')",
         contact:
           "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.05)), url('/manaus4.jpg')",
         newsletter:

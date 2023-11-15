@@ -1,12 +1,13 @@
-import { Search } from 'lucide-react'
-import { twMerge } from 'tailwind-merge'
-import { usePathname } from 'next/navigation'
 import { ComponentProps } from 'react'
 
-type LoginButtonProps = ComponentProps<'button'>
+import { Search } from 'lucide-react'
+import { twMerge } from 'tailwind-merge'
+import { useNavbar } from '@/presentation/contexts'
 
-export function LoginButton(props: LoginButtonProps) {
-  const currentPath = usePathname()
+export function LoginButton(props: ComponentProps<'button'>) {
+  const { navbarState } = useNavbar()
+
+  console.log(navbarState)
 
   return (
     <div className="hidden items-center gap-6 lg:flex">
@@ -14,9 +15,9 @@ export function LoginButton(props: LoginButtonProps) {
       <button
         className={twMerge(
           'rounded-sm bg-black px-10 py-2 text-base shadow-sm',
-          currentPath === '/'
-            ? 'bg-zinc-900 text-zinc-100'
-            : 'bg-zinc-100 text-zinc-700',
+          navbarState === 'black'
+            ? 'bg-zinc-100 text-zinc-700'
+            : 'bg-zinc-900 text-zinc-100',
           props.className,
         )}
       >

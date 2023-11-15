@@ -1,22 +1,17 @@
-import { usePathname } from 'next/navigation'
 import { twMerge } from 'tailwind-merge'
 import { NavItem } from './NavItem'
+import { useNavbar } from '@/presentation/contexts'
 
-interface NavBarProps {
-  isBackgroundTransparent?: boolean
-}
-
-export function NavBar({ isBackgroundTransparent = false }: NavBarProps) {
-  const currentPath = usePathname()
+export function NavBar() {
+  const { navbarState } = useNavbar()
 
   return (
     <nav
       className={twMerge(
         'hidden gap-8 text-sm lg:flex 2xl:text-base',
-        isBackgroundTransparent && currentPath === '/'
+        navbarState === 'transparent' || navbarState === 'black'
           ? 'text-zinc-200'
           : 'text-zinc-700',
-        currentPath !== '/' && 'text-zinc-200',
       )}
     >
       <NavItem href="/">DESTAQUES</NavItem>

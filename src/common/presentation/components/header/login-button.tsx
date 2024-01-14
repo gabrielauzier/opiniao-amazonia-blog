@@ -8,8 +8,6 @@ import { useNavbar } from '@/common/presentation/contexts'
 export function LoginButton(props: ComponentProps<'button'>) {
   const { navbarState } = useNavbar()
 
-  console.log(navbarState)
-
   return (
     <div className="hidden items-center gap-6 lg:flex">
       <Search />

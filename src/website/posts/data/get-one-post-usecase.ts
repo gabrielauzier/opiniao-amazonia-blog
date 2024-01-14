@@ -13,7 +13,7 @@ export class GetOnePostUsecase implements AbstractGetOnePostUsecase {
 
   async execute(params?: IGetOnePost.Params): Promise<IGetOnePost.Result> {
     try {
-      this.logger.info('GetOnePostUsecase: start command')
+      this.logger.info('GetOnePostUsecase: start command', { extra: params })
       const result = await this.postsRepository.getOnePost(params)
 
       this.logger.info('GetOnePostUsecase: completed sucessfully')

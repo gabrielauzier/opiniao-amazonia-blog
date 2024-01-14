@@ -10,6 +10,8 @@ export const formatDate = function (date: Date) {
       return n.toString().padStart(2, '0')
     })
     .join(':')
+    .concat('.')
+    .concat(date.getMilliseconds().toString())
 
   return dateFormatted + 'T' + time
 }

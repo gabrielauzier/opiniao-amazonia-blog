@@ -1,3 +1,4 @@
+import { CategoriesList } from '@/website/categories/presentation/components'
 import { Clock, BarChart2 } from 'lucide-react'
 
 import Image from 'next/image'
@@ -15,21 +16,11 @@ export function Picture({ imgUrl, categories, title, author }: PictureProps) {
       <Image
         src={imgUrl}
         fill={true}
-        alt="Post image"
+        alt="ilustração do post"
         className="object-cover object-center"
       />
       <div className="absolute left-0 top-0 flex h-full w-full flex-col justify-between bg-black bg-opacity-20 px-3 py-7">
-        <div className="flex flex-wrap gap-1">
-          {categories.map((category) => (
-            <div
-              className="z-9 h-fit cursor-pointer rounded-sm bg-zinc-50 bg-opacity-20 px-3 py-1 transition duration-150 ease-in-out hover:scale-105 hover:bg-opacity-10"
-              key={category}
-            >
-              <span className="text-zinc-50">{category}</span>
-            </div>
-          ))}
-        </div>
-
+        <CategoriesList categories={categories} />
         <div className="px-3">
           <h1 className="text-xl font-medium text-zinc-50 lg:text-3xl">
             {title.toUpperCase()}

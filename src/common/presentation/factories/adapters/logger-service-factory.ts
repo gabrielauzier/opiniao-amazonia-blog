@@ -7,5 +7,3 @@ export const makeLoggerService = () =>
     timestamp: true,
     isTTY: true,
   })
-
-export const logger = makeLoggerService()

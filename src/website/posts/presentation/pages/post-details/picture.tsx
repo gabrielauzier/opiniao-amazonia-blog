@@ -20,7 +20,12 @@ export function Picture({ imgUrl, categories, title, author }: PictureProps) {
         className="object-cover object-center"
       />
       <div className="absolute left-0 top-0 flex h-full w-full flex-col justify-between bg-black bg-opacity-20 px-3 py-7">
-        <CategoriesList categories={categories} />
+        <CategoriesList.Root>
+          {categories.map((category) => (
+            <CategoriesList.Item key={category}>{category}</CategoriesList.Item>
+          ))}
+        </CategoriesList.Root>
+
         <div className="px-3">
           <h1 className="text-xl font-medium text-zinc-50 lg:text-3xl">
             {title.toUpperCase()}

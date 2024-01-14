@@ -1,3 +1,4 @@
+import { AuthorModel } from '../models/author-model'
 import { CommentModel } from '../models/comment-model'
 import { PostModel } from '../models/post-model'
 
@@ -8,6 +9,7 @@ export namespace IGetOnePost {
   }
   export interface Result {
     post: PostModel
+    author?: AuthorModel
     comments: CommentModel[]
   }
 }

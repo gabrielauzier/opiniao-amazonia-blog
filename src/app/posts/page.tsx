@@ -1,3 +1,3 @@
-import { makePostsPage } from '@/site/posts/presentation/factories/posts-page-factory'
+import { makePostsPage } from '@/website/posts/presentation/factories/posts-page-factory'
 
 export default () => makePostsPage()

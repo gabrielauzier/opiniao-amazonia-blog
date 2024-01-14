@@ -3,8 +3,8 @@ import { TopCategories } from './sections/top-categories'
 import { Contact } from './sections/contact'
 import { Banner } from './sections/banner'
 
-import { AbstractGetAllPostsUsecase } from '@/site/posts/domain'
-import { PostList } from '@/site/posts/presentation/components'
+import { AbstractGetAllPostsUsecase } from '@/website/posts/domain'
+import { PostList } from '@/website/posts/presentation/components'
 
 interface HomeProps {
   getPosts: AbstractGetAllPostsUsecase

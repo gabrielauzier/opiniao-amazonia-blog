@@ -1,3 +1,3 @@
-import { makeHomePage } from '@/site/home/presentation/factories'
+import { makeHomePage } from '@/website/home/presentation/factories'
 
 export default () => makeHomePage()

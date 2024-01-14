@@ -1,4 +1,4 @@
-import { PostPreviewModel } from './post-preview-model'
+import { PostPreviewModel } from '../models/post-preview-model'
 
 export namespace IGetAllPosts {
   export interface Params {

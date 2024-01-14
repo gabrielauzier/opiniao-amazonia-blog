@@ -1,5 +1,5 @@
-import { IGetAllPosts } from './abstract-get-all-posts-usecase'
-import { IGetOnePost } from './abstract-get-one-post-usecase'
+import { IGetAllPosts } from '../usecases/abstract-get-all-posts-usecase'
+import { IGetOnePost } from '../usecases/abstract-get-one-post-usecase'
 
 export interface AbstractPostsRepository {
   getAllPosts(params?: IGetAllPosts.Params): Promise<IGetAllPosts.Result>

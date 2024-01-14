@@ -3,7 +3,7 @@ import {
   AbstractGetOnePostUsecase,
   AbstractPostsRepository,
   IGetOnePost,
-} from '../domain'
+} from '../../domain'
 
 export class GetOnePostUsecase implements AbstractGetOnePostUsecase {
   constructor(

@@ -1,4 +1,5 @@
-import { PostModel } from './post-model'
+import { CommentModel } from '../models/comment-model'
+import { PostModel } from '../models/post-model'
 
 export namespace IGetOnePost {
   export interface Params {
@@ -7,6 +8,7 @@ export namespace IGetOnePost {
   }
   export interface Result {
     post: PostModel
+    comments: CommentModel[]
   }
 }
 

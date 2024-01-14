@@ -46,6 +46,7 @@ export class PrismicPostsRepository implements AbstractPostsRepository {
         content: prismicH.asHTML(post.data.content),
         imgUrl: post.data.image.url ?? '',
       },
+      comments: [],
     }
   }
 }

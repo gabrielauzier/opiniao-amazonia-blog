@@ -1,5 +1,5 @@
 export * from './post-preview'
 export * from './post-list'
-export * from './newsletter'
 export * from './social-media'
 export * from './comments'
+export * from './featured-posts'

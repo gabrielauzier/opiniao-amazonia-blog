@@ -1,9 +1,10 @@
+import { Newsletter } from '@/website/newsletter/presentation/components'
 import { PostModel, PostPreviewModel } from '@/website/posts/domain'
+
+import { Comments } from '../../components/comments'
 import { Author } from './author'
-import { Newsletter } from '../../components/newsletter'
 import { Path } from './path'
 import { Picture } from './picture'
-import { Comments } from '../../components/comments'
 import { Content } from './content'
 import { Aside } from './aside'
 
@@ -26,7 +27,7 @@ export function PostDetails({ post, topPosts }: PostDetailsProps) {
             <Newsletter />
           </article>
 
-          <Aside topPosts={topPosts} />
+          <Aside featuredPosts={topPosts} />
         </div>
       </div>
     </div>

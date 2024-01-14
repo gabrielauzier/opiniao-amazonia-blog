@@ -1,4 +1,3 @@
-import { PostModel } from '@/__deprecated/domain/models'
 import {
   FacebookIcon,
   InstagramIcon,
@@ -8,33 +7,16 @@ import {
   YoutubeIcon,
 } from '@/common/presentation/assets'
 import { PostPreviewModel } from '@/website/posts/domain'
-import Image from 'next/image'
-import { SocialMedia } from '../../../components'
+import { FeaturedPosts, SocialMedia } from '../../../components'
 
 interface AsideProps {
-  topPosts: PostPreviewModel[]
+  featuredPosts: PostPreviewModel[]
 }
 
-export function Aside({ topPosts }: AsideProps) {
+export function Aside({ featuredPosts }: AsideProps) {
   return (
     <aside className="w-full px-7 lg:w-1/4 lg:px-0">
-      <div className="flex w-full flex-col gap-6">
-        {topPosts.map((post) => (
-          <div key={post.id} className="flex h-fit w-full gap-6">
-            <div className="relative z-10 h-20 w-20">
-              <Image
-                alt={post.slug}
-                src={post.imgUrl}
-                fill={true}
-                className="absolute left-0 top-0 rounded-full object-cover object-center shadow-sm"
-              />
-            </div>
-            <span className="font line-clamp-3 h-[60px] w-32 text-sm text-zinc-700">
-              {post.title}
-            </span>
-          </div>
-        ))}
-      </div>
+      <FeaturedPosts posts={featuredPosts} />
 
       <div className="mt-28 h-96">
         <strong className="font-mono font-light tracking-[0.150rem] text-zinc-700">

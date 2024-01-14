@@ -1,6 +1,11 @@
+import { format } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
+
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import _ from 'lodash'
 
 interface PostPreviewProps {
   slug: string
@@ -45,11 +50,13 @@ export function PostPreview({
         </span>
       </div>
       <div>
-        <span className="text-zinc-400">{date}</span>
+        <span className="text-zinc-400">{formatDate(date)}</span>
         {/* <span className="text-zinc-400"> • 1min de leitura</span> */}
       </div>
       <div className="my-6">
-        <p className="line-clamp-5 h-[120px] text-zinc-500">{excerpt}</p>
+        <p className="line-clamp-5 h-[100px] text-sm text-zinc-500">
+          {excerpt}
+        </p>
       </div>
       <Link
         href={`/post/${slug}`}
@@ -60,4 +67,8 @@ export function PostPreview({
       </Link>
     </div>
   )
+}
+
+function formatDate(val: string) {
+  return _.capitalize(format(new Date(val), 'MMM dd, yyyy', { locale: ptBR }))
 }

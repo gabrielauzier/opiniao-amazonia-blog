@@ -1,18 +1,3 @@
-export default function PostsPage() {
-  return (
-    <div>
-      <h1>Posts Page</h1>
-      <h1>Posts Page</h1>
-      <h1>Posts Page</h1>
-      <h1>Posts Page</h1>
-      <h1>Posts Page</h1>
-      <h1>Posts Page</h1>
-      <h1>Posts Page</h1>
-      <h1>Posts Page</h1>
-      <h1>Posts Page</h1>
-      <h1>Posts Page</h1>
-      <h1>Posts Page</h1>
-      <h1>Posts Page</h1>
-    </div>
-  )
-}
+import { makePostsPage } from '@/site/posts/presentation/factories/posts-page-factory'
+
+export default () => makePostsPage()

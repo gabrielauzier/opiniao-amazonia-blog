@@ -1,9 +1,10 @@
-import '@/presentation/styles/globals.css'
+import '@/common/presentation/styles/globals.css'
+
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { Header } from '@/presentation/components/Header'
-import { App } from './app'
-import { Footer } from '@/presentation/components/Footer'
+
+import { Header, Footer } from '@/common/presentation/components'
+import { AppProviders } from '@/common/presentation/contexts/app-context-providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,16 +19,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <App>
+    <AppProviders>
       <html lang="en" className="overflow-x-hidden">
         <body className={inter.className}>
-          <div className="relative h-[100vh] w-[100vw]">
+          <div className="relative min-h-screen w-full">
             <Header />
             <main>{children}</main>
             <Footer />
           </div>
         </body>
       </html>
-    </App>
+    </AppProviders>
   )
 }

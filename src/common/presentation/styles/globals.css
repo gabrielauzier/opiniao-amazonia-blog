@@ -5,9 +5,10 @@
 body {
   -webkit-font-smoothing: antialiased;
   font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth !important;
 }
 
-html {
-  scroll-behavior: smooth;
+*, html {
+  scroll-behavior: smooth !important;
 }
   

@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { Highlights } from './highlights'
 import { Recents } from './recents'
 
-export default function Page() {
+export default function PostsPage() {
   return (
     <MainLayout>
       <Head>

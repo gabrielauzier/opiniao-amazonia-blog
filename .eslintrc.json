@@ -5,6 +5,7 @@
   ],
   "rules": {
     "@typescript-eslint/no-namespace": "off",
-    "no-useless-constructor": "off"
+    "no-useless-constructor": "off",
+    "import/no-anonymous-default-export": "off"
   }
 }

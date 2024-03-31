@@ -9,7 +9,14 @@ const config: Config = {
         xs: '12px',
       },
 
+      background: {
+        shadow:
+          'linear-gradient(0deg,#000 0,rgba(0,0,0,0) 100%) no-repeat padding-box',
+      },
+
       backgroundImage: {
+        shadow:
+          'linear-gradient(0deg,#000 0,rgba(0,0,0,0) 100%) no-repeat padding-box',
         hero: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.05)), url('/rio.jpg')",
         banner2:
           "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('/encontro-das-aguas.jpg')",
@@ -51,7 +58,7 @@ const config: Config = {
       },
 
       height: {
-        body: 'calc(100vh - 3.5rem)',
+        body: 'calc(100vh - 36rem)',
         header: '5rem',
       },
 

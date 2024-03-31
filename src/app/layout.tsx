@@ -1,33 +1,27 @@
-import '@/presentation/styles/globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { Header } from '@/presentation/components/Header'
-import { App } from './app'
-import { Footer } from '@/presentation/components/Footer'
+import '@/common/presentation/styles/globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+import type { Metadata } from 'next'
+import { Nunito } from 'next/font/google'
+
+import { RootLayout } from '@/common/presentation/components/layouts/root.layout'
+
+const inter = Nunito({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Opinião Amazônia | Início',
+  title: 'Opinião Amazônia',
   description: 'Blog de opinião',
 }
 
-export default function RootLayout({
+export default function AppRootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <App>
-      <html lang="en" className="overflow-x-hidden">
-        <body className={inter.className}>
-          <div className="relative h-[100vh] w-[100vw]">
-            <Header />
-            <main>{children}</main>
-            <Footer />
-          </div>
-        </body>
-      </html>
-    </App>
+    <html lang="en" className="overflow-x-hidden">
+      <body className={inter.className}>
+        <RootLayout>{children}</RootLayout>
+      </body>
+    </html>
   )
 }

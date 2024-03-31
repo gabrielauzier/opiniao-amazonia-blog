@@ -13,13 +13,7 @@ export function NavigationItem({
   className,
 }: NavigationItemProps) {
   return (
-    <Link
-      href={href}
-      className={cn(
-        'font-semibold text-green-800 hover:brightness-125',
-        className,
-      )}
-    >
+    <Link href={href} className={cn('font-bold text-green-800', className)}>
       {children}
     </Link>
   )

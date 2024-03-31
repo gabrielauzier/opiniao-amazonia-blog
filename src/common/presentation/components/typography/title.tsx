@@ -9,10 +9,11 @@ type TextSize =
   | 'xxs'
   | 'xs'
   | 'sm'
-  | 'base'
+  | 'md'
   | 'lg'
   | 'xl'
   | '2xl'
+  | '3xl'
   | '4xl'
   | '5xl'
   | '6xl'
@@ -24,27 +25,20 @@ export interface TextProps extends ComponentProps<'p'> {
   children?: ReactNode
   size?: TextSize
   as?: TypographyHtmlTags
-  stronger?: boolean
 }
 
-export function Text({
+export function Title({
   children,
   className,
-  size = 'base',
-  as = 'p',
-  stronger = false,
+  size = '4xl',
+  as = 'h1',
   ...rest
 }: TextProps) {
   const Tag: any = as
 
   return (
     <Tag
-      className={cn(
-        'text-typography-text text-zinc-500',
-        `text-${size}`,
-        stronger && 'text-zinc-800',
-        className,
-      )}
+      className={cn('font-bold text-zinc-800', `text-${size}`, className)}
       {...rest}
     >
       {children}

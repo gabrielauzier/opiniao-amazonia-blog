@@ -9,10 +9,11 @@ type TextSize =
   | 'xxs'
   | 'xs'
   | 'sm'
-  | 'base'
+  | 'md'
   | 'lg'
   | 'xl'
   | '2xl'
+  | '3xl'
   | '4xl'
   | '5xl'
   | '6xl'
@@ -27,11 +28,11 @@ export interface TextProps extends ComponentProps<'p'> {
   stronger?: boolean
 }
 
-export function Text({
+export function Heading({
   children,
   className,
-  size = 'base',
-  as = 'p',
+  size = '2xl',
+  as = 'h2',
   stronger = false,
   ...rest
 }: TextProps) {
@@ -40,9 +41,9 @@ export function Text({
   return (
     <Tag
       className={cn(
-        'text-typography-text text-zinc-500',
-        `text-${size}`,
-        stronger && 'text-zinc-800',
+        'text-3xl font-semibold text-zinc-700',
+        `lg:text-${size}`,
+        stronger && 'font-bold text-zinc-800',
         className,
       )}
       {...rest}

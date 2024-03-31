@@ -1,19 +1,27 @@
+import { Heading } from '@/common/presentation/components/typography/heading'
+import Head from 'next/head'
+
 export function Banner() {
   return (
-    <section className="shadow-x bg-banner2 h-fit w-full bg-cover">
-      <div className="lg:max-w-body mx-auto mt-0 w-full max-w-[28rem] px-5 py-40 text-white lg:px-0">
-        <div className="space-y-3 font-medium text-zinc-100 2xl:w-3/4">
-          <h2 className="font-mono text-4xl font-semibold">
+    <section className="shadow-x h-fit w-full bg-banner2 bg-cover">
+      <Head>
+        <title>Opinião Amazônia • A Amazônia</title>
+      </Head>
+
+      <div className="mx-auto min-h-screen w-full max-w-[1200px] px-3 text-white xl:px-0">
+        <div className="space-y-3 pb-40 pt-10 font-medium text-zinc-100 2xl:w-3/4">
+          <Heading className="text-white" size="4xl" stronger>
             Amazônia, uma região de contrastes
-          </h2>
+          </Heading>
           <p>
-            A região amazónica é constituída de uma rica, literalmente, floresta
-            pluvial (equatorial). Sua dimensão é continental e alcança 9 países
-            da América do Sul. O Brasil detém 62% dela Em seus nove estados
-            amazónicos: Amazonas, Acre, Rondônia, Roraima, Pará, Maranhão,
-            Amapá, Tocantins e Mato Grosso. É o maior sistema hidrográfico do
-            Planeta e domina mais de 70% das águas brasileiras, enquanto o
-            Brasil é o maior reservatório de água doce do mundo, com 13%.
+            A região amazónica é constituída por uma, literalmente, rica
+            floresta pluvial (equatorial). Sua dimensão é continental e alcança
+            9 países da América do Sul. O Brasil detém 62% dela Em seus nove
+            estados amazónicos: Amazonas, Acre, Rondônia, Roraima, Pará,
+            Maranhão, Amapá, Tocantins e Mato Grosso. É o maior sistema
+            hidrográfico do Planeta e domina mais de 70% das águas brasileiras,
+            enquanto o Brasil é o maior reservatório de água doce do mundo, com
+            13%.
           </p>
           <p>
             Com uma fauna e flora diversa possui riqueza incalculável em ativos
@@ -29,7 +37,7 @@ export function Banner() {
           </p>
 
           <div>
-            <h4 className="mb-4 mt-8 font-mono text-2xl font-extrabold">
+            <h4 className="mb-4 mt-8 text-2xl font-extrabold">
               Quais são as origens desses fenômenos? <br /> Quais são os
               entraves? Quais são as soluções?
             </h4>

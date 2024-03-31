@@ -1,11 +1,13 @@
+import { Heading } from '@/common/presentation/components/typography/heading'
+
 export function Banner() {
   return (
-    <section className="shadow-x bg-banner2 h-fit w-full bg-cover">
-      <div className="lg:max-w-body mx-auto mt-0 w-full max-w-[28rem] px-5 py-40 text-white lg:px-0">
+    <section className="shadow-x bg-banner2 animate-banner-appearance h-fit w-full bg-cover transition-all duration-300">
+      <div className="lg:max-w-body mx-auto mt-0 h-screen w-full max-w-[1200px] px-3 pt-5 text-white xl:px-0">
         <div className="space-y-3 font-medium text-zinc-100 2xl:w-3/4">
-          <h2 className="font-mono text-4xl font-semibold">
+          <Heading className="text-white" size="4xl" stronger>
             Amazônia, uma região de contrastes
-          </h2>
+          </Heading>
           <p>
             A região amazónica é constituída de uma rica, literalmente, floresta
             pluvial (equatorial). Sua dimensão é continental e alcança 9 países
@@ -29,7 +31,7 @@ export function Banner() {
           </p>
 
           <div>
-            <h4 className="mb-4 mt-8 font-mono text-2xl font-extrabold">
+            <h4 className="mb-4 mt-8 text-2xl font-extrabold">
               Quais são as origens desses fenômenos? <br /> Quais são os
               entraves? Quais são as soluções?
             </h4>

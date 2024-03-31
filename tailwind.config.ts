@@ -51,7 +51,7 @@ const config: Config = {
       },
 
       height: {
-        body: 'calc(100vh - 3.5rem)',
+        body: 'calc(100vh - 36rem)',
         header: '5rem',
       },
 

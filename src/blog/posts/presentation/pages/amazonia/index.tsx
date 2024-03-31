@@ -1,7 +1,6 @@
-import { Title } from '@/common/presentation/components/typography/title'
 import { Banner } from './banner'
 
-export default function Page() {
+export default function AmazoniaPage() {
   return (
     <main>
       {/* <Title>Sobre nós</Title> */}

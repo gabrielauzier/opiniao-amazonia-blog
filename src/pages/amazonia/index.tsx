@@ -1,11 +1,3 @@
-import { Title } from '@/common/presentation/components/typography/title'
-import { Banner } from './banner'
+import AmazoniaPage from '@/blog/posts/presentation/pages/amazonia'
 
-export default function Page() {
-  return (
-    <main>
-      {/* <Title>Sobre nós</Title> */}
-      <Banner />
-    </main>
-  )
-}
+export default () => AmazoniaPage()

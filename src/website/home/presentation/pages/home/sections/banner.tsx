@@ -11,10 +11,10 @@ export function Banner() {
         'h-[32rem]',
       )}
     >
-      <h2 className="mb-4 px-5 text-4xl text-white lg:text-6xl">
+      <h2 className="mb-4 px-5 text-4xl font-light tracking-tight text-white lg:text-6xl">
         NAVEGUE PELA SELVA DAS IDEIAS
       </h2>
-      <h2 className="text-xl text-white lg:text-4xl">
+      <h2 className="text-xl font-light text-white lg:text-4xl">
         O palco do debate Amazônico!
       </h2>
       <Link

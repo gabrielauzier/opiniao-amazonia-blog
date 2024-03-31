@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import _ from 'lodash'
+import { CategoriesList } from '@/website/categories/presentation/components'
 
 interface PostPreviewProps {
   slug: string
@@ -33,31 +34,46 @@ export function PostPreview({
           alt=""
           className="absolute left-0 top-0 h-full w-fit object-cover object-center opacity-90"
         />
-        <div className="z-11 absolute left-0 top-0 mt-7 flex w-full flex-wrap gap-1 px-4 shadow-sm">
+
+        <CategoriesList.Root className="z-11 absolute left-0 top-0 mt-7 px-4 shadow-sm">
           {categories.map((category) => (
-            <div
-              className="z-9 h-fit rounded-sm bg-zinc-500 bg-opacity-30 px-3 py-1"
+            <CategoriesList.Item
               key={category}
+              className="bg-emerald-50 bg-opacity-30"
             >
-              <span className="text-white">{category}</span>
-            </div>
+              {category}
+            </CategoriesList.Item>
           ))}
-        </div>
+        </CategoriesList.Root>
       </div>
-      <div className="my-4 h-[112px] lg:h-[128px] 2xl:mt-8">
-        <span className="line-clamp-4 text-xl text-zinc-700 2xl:text-2xl">
+
+      <div className="my-4 mt-8 h-20">
+        <span className="line-clamp-3 text-xl text-zinc-700 2xl:text-2xl">
           {title}
         </span>
       </div>
-      <div>
-        <span className="text-zinc-400">{formatDate(date)}</span>
-        {/* <span className="text-zinc-400"> • 1min de leitura</span> */}
+
+      <div className="flex gap-2 pt-6">
+        <div className="flex items-center gap-2">
+          <div className="h-6 w-6 rounded-full bg-emerald-200" />
+          <span className="text-sm font-medium text-zinc-700">
+            Gabriel Auzier
+          </span>
+        </div>
+        <div>
+          <span className="mt-6 gap-4 text-xs text-zinc-500">
+            <span className="font-medium text-zinc-300">—— </span>{' '}
+            {formatDate(date)}
+          </span>
+        </div>
       </div>
+
       <div className="my-6">
         <p className="line-clamp-5 h-[100px] text-sm text-zinc-500">
           {excerpt}
         </p>
       </div>
+
       <Link
         href={`/post/${slug}`}
         className="group flex w-fit items-center gap-2 rounded-full text-zinc-800 underline underline-offset-4 hover:text-zinc-600"
@@ -70,5 +86,5 @@ export function PostPreview({
 }
 
 function formatDate(val: string) {
-  return _.capitalize(format(new Date(val), 'MMM dd, yyyy', { locale: ptBR }))
+  return _.capitalize(format(new Date(val), 'MMMM dd, yyyy', { locale: ptBR }))
 }

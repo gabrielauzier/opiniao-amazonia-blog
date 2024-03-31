@@ -9,6 +9,7 @@ export default function Page() {
         <title>Opinião Amazônia • Leitor</title>
       </Head>
       <Title>Leitor</Title>
+      <p>Página do leitor</p>
     </MainLayout>
   )
 }

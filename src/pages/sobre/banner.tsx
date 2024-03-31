@@ -2,8 +2,8 @@ import { Heading } from '@/common/presentation/components/typography/heading'
 
 export function Banner() {
   return (
-    <section className="shadow-x bg-banner2 animate-banner-appearance h-fit w-full bg-cover transition-all duration-300">
-      <div className="lg:max-w-body mx-auto mt-0 h-screen w-full max-w-[1200px] px-3 pt-5 text-white xl:px-0">
+    <section className="shadow-x animate-banner-appearance h-fit w-full bg-banner2 bg-cover transition-all duration-300">
+      <div className="mx-auto mt-0 h-screen w-full max-w-[1200px] px-3 pt-5 text-white lg:max-w-body xl:px-0">
         <div className="space-y-3 font-medium text-zinc-100 2xl:w-3/4">
           <Heading className="text-white" size="4xl" stronger>
             Amazônia, uma região de contrastes

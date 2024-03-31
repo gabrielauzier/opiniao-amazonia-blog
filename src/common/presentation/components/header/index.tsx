@@ -1,42 +1,24 @@
-'use client'
-
-import { twMerge } from 'tailwind-merge'
-import { Menu } from 'lucide-react'
-
-import { LoginButton } from './login-button'
-import { NavBar } from './navigation'
-import { Logo } from './logo'
-
-import { useNavbar } from '@/common/presentation/contexts'
+import { Search } from 'lucide-react'
+import { cn } from '../../utils/classnames'
+import { Brand } from './brand'
+import { Navigation } from './navigation'
 
 export function Header() {
-  const { navbarState } = useNavbar()
-
   return (
-    <header
-      className={twMerge(
-        'fixed top-0 z-50 h-header w-full px-5 lg:block',
-        navbarState === 'white' &&
-          'animate-slideDownAndFade bg-white shadow-md',
-        navbarState === 'transparent' && 'bg-transparent',
-        navbarState === 'black' &&
-          'animate-slideDownAndFade bg-zinc-900 text-zinc-200',
-      )}
-    >
-      <div
-        className={twMerge(
-          'mx-auto flex h-header max-w-header items-center justify-between bg-transparent text-zinc-200 2xl:text-xl',
-          navbarState === 'black' ? 'text-zinc-200' : 'text-zinc-700',
-        )}
-      >
-        <Logo />
-        <NavBar />
-        <LoginButton />
+    <header className="">
+      <div className="flex h-20 items-center justify-center bg-green-800">
+        <div className="relative flex w-full max-w-[1200px] items-center justify-center">
+          <Brand />
 
-        <button className="lg:hidden">
-          <Menu className="h-8 w-8 text-zinc-400" />
-        </button>
+          <div className="absolute right-0">
+            <Search className="text-white"></Search>
+          </div>
+        </div>
       </div>
+
+      <div className="h-2 border-b-2 border-green-800"></div>
+
+      <Navigation />
     </header>
   )
 }

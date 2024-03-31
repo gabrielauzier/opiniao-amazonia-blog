@@ -1,24 +1,22 @@
-import { twMerge } from 'tailwind-merge'
-import { NavItem } from './nav-item'
+import Flag from 'react-world-flags'
+import { NavigationItem } from './item'
 
-import { useNavbar } from '@/common/presentation/contexts'
-
-export function NavBar() {
-  const { navbarState } = useNavbar()
-
+export function Navigation() {
   return (
-    <nav
-      className={twMerge(
-        'hidden gap-8 text-sm lg:flex 2xl:text-base',
-        navbarState === 'transparent' || navbarState === 'black'
-          ? 'text-zinc-200'
-          : 'text-zinc-700',
-      )}
-    >
-      <NavItem href="/highlights">DESTAQUES</NavItem>
-      <NavItem href="/about">SOBRE NÓS</NavItem>
-      <NavItem href="/credits">CRÉDITOS</NavItem>
-      <NavItem href="/categories">CATEGORIAS</NavItem>
-    </nav>
+    <div className="bg-[#f9f9f9]">
+      <nav className="mx-auto flex h-12 w-full max-w-[1200px] items-center justify-between">
+        <NavigationItem href="/sobre">Sobre nós</NavigationItem>
+        <NavigationItem href="/equipe">Equipe</NavigationItem>
+        <NavigationItem href="/publicacoes">Publicações</NavigationItem>
+        <NavigationItem href="/comercial">Comercial</NavigationItem>
+        <NavigationItem href="/" className="flex gap-2">
+          <Flag
+            className="h-5 w-5 rounded-full object-cover object-center"
+            code="BR"
+          />{' '}
+          PT-BR
+        </NavigationItem>
+      </nav>
+    </div>
   )
 }

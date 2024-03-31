@@ -1,3 +1,4 @@
+import { RootLayout } from '@/common/presentation/components/layouts/root.layout'
 import '@/common/presentation/styles/globals.css'
 
 import type { AppProps } from 'next/app'
@@ -6,5 +7,9 @@ export default function App({
   Component,
   pageProps: { ...pageProps },
 }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <RootLayout>
+      <Component {...pageProps} />
+    </RootLayout>
+  )
 }

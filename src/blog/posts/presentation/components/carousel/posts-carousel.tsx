@@ -1,26 +1,26 @@
+import { ComponentProps } from 'react'
+
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from '@/common/presentation/components/ui/carousel'
-import { Highlight } from './highlight'
+import { PostCarouselHighlight } from './post-carousel-highlight'
 
-export function Highlights() {
+type PostsCarouselProps = ComponentProps<'div'>
+
+export function PostsCarousel({ ...props }: PostsCarouselProps) {
   return (
-    <Carousel className="rounded-2xl border">
-      <CarouselPrevious />
-      <CarouselNext />
+    <Carousel className={props.className}>
       <CarouselContent className="h-[32rem]">
         <CarouselItem>
-          <Highlight
+          <PostCarouselHighlight
             imgUrl="/example2.jpg"
             title="A comunidade internacional e a Amazônia: Entre a cobrança e a ajuda"
           />
         </CarouselItem>
         <CarouselItem>
-          <Highlight
+          <PostCarouselHighlight
             imgUrl="/example1.jpg"
             title="Eleições 2024: o que queremos para a Amazônia?"
           />

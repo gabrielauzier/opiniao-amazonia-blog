@@ -1,7 +1,7 @@
-import { Post } from '@/blog/posts/domain/models/post'
 import * as prismicH from '@prismicio/helpers'
 
-import { PostDocument } from '../../../../../../prismicio-types'
+import { Post } from '@/blog/posts/domain/models/post'
+import { PostDocument } from '#root/prismicio-types'
 
 export class PrismicPostMapper {
   static toDomain(raw: PostDocument): Post {

@@ -2,9 +2,19 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
 import { Separator } from '@/common/presentation/components/ui/separator'
+
+import { Post } from '@/blog/posts/domain/models/post'
 import { PostPreview } from '../preview/post-preview'
 
-export function MostWatchedPostsThisWeek() {
+interface MostWatchedPostsThisWeekProps {
+  posts: Post[]
+}
+
+export function MostWatchedPostsThisWeek({
+  posts,
+}: MostWatchedPostsThisWeekProps) {
+  console.log(posts)
+
   return (
     <section className="flex flex-col gap-3">
       <Separator />
@@ -21,7 +31,19 @@ export function MostWatchedPostsThisWeek() {
       </div>
 
       <div className="grid grid-cols-4 gap-4">
-        <PostPreview
+        {posts.map((post) => (
+          <PostPreview
+            categories={post.categories}
+            date={post.date.toString()}
+            excerpt={post.excerpt}
+            imgUrl={post.imgUrl}
+            slug={post.slug}
+            title={post.title}
+            key={post.id}
+          />
+        ))}
+
+        {/* <PostPreview
           categories={['Cultura']}
           date="12/10/2023"
           excerpt="Lorem ipsum"
@@ -55,7 +77,7 @@ export function MostWatchedPostsThisWeek() {
           imgUrl="/example1.jpg"
           slug="post1"
           title="O futuro da Amazônia: Entre o desenvolvimento e a preservação"
-        />
+        /> */}
       </div>
     </section>
   )

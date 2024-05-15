@@ -18,6 +18,30 @@ const config = {
       },
     },
     extend: {
+      backgroundImage: {
+        shadow:
+          'linear-gradient(0deg,#000 0,rgba(0,0,0,0) 100%) no-repeat padding-box',
+        hero: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.05)), url('/rio.jpg')",
+        banner2:
+          "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('/encontro-das-aguas.jpg')",
+        contact:
+          "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.05)), url('/rio.jpg')",
+        newsletter:
+          "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url('/newsletter.jpg')",
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'categories-culture':
+          "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.05)), url('https://images.pexels.com/photos/1036372/pexels-photo-1036372.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
+        'categories-policy':
+          "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.05)), url('https://live.staticflickr.com/5479/14062639285_5e0f93b902_b.jpg')",
+        'categories-economy':
+          "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.05)), url('https://images.pexels.com/photos/904735/pexels-photo-904735.jpeg?auto=compress&cs=tinysrgb&w=1600')",
+        'categories-business':
+          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.05)), url('https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
+        'categories-manaus':
+          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.05)), url('https://images.pexels.com/photos/7903925/pexels-photo-7903925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

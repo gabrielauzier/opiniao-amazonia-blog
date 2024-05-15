@@ -1,13 +1,13 @@
 import { createClient } from '@/prismicio'
 import { Client } from '@prismicio/client'
 
+import { AllDocumentTypes } from '#root/prismicio-types'
+
 import { PostsRepository } from '@/blog/posts/data/repositories/posts-repository'
 import { Post } from '@/blog/posts/domain/models/post'
 
 import { PrismicPostWithContentMapper } from '../mappers/prismic-post-with-content.mapper'
 import { PrismicPostMapper } from '../mappers/prismic-post.mapper'
-
-import { AllDocumentTypes } from '../../../../../../prismicio-types'
 
 export class PrismicPostsRepository implements PostsRepository {
   client: Client<AllDocumentTypes>

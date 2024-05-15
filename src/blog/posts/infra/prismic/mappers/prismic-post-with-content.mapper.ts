@@ -1,7 +1,7 @@
 import * as prismicH from '@prismicio/helpers'
 
-import { PostDocument } from '../../../../../../prismicio-types'
 import { PostWithContent } from '@/blog/posts/domain/models/post-with-content'
+import { PostDocument } from '#root/prismicio-types'
 
 export class PrismicPostWithContentMapper {
   static toDomain(raw: PostDocument): PostWithContent {

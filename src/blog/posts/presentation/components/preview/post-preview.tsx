@@ -19,6 +19,7 @@ export function PostPreview({ title, imgUrl }: PostPreviewProps) {
           src={imgUrl}
           fill={true}
           alt=""
+          priority
           className="absolute left-0 top-0 h-full w-fit object-cover object-center opacity-90"
         />
 

@@ -1,7 +1,7 @@
-export function Contact() {
+export function ContactBanner() {
   return (
     <section className="mb-14">
-      <div className="max-w-body bg-contact mx-auto mt-6 flex h-96 flex-col items-center justify-center gap-4 bg-cover px-5 text-center shadow-lg lg:px-0">
+      <div className="max-w-body bg-contact mx-auto flex h-[36rem] flex-col items-center justify-center gap-4 bg-cover px-5 text-center shadow-lg lg:px-0">
         <h3 className="text-4xl font-medium text-white">
           Conheça, Compreenda, Converse
         </h3>

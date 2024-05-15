@@ -1,21 +1,37 @@
 import Head from 'next/head'
+import { GetStaticProps } from 'next'
 
 import { MainLayout } from '@/common/presentation/components/layouts/main.layout'
+import { ContactBanner } from '@/common/presentation/components/home/contact-banner'
 
+import { makeFindManyPosts } from '@/blog/posts/presentation/factories/posts-usecases.factory'
 import { MostWatchedPostsThisWeek } from '@/blog/posts/presentation/components/most-watched/most-watched-posts-this-week'
 import { PostsHighlights } from '@/blog/posts/presentation/components/highlights/posts-highlights'
+import { Post } from '@/blog/posts/domain/models/post'
 
-export default function HomePage() {
+interface HomePageProps {
+  posts: Post[]
+}
+
+export const getStaticProps = (async () => {
+  const posts = await makeFindManyPosts().execute()
+
+  return { props: { posts } }
+}) satisfies GetStaticProps<HomePageProps>
+
+export default function HomePage({ posts }: HomePageProps) {
   return (
-    <MainLayout>
+    <>
       <Head>
-        <title>Opinião Amazônia • Posts</title>
+        <title>Opinião Amazônia • Início</title>
       </Head>
-
-      <div className="space-y-12">
-        <PostsHighlights />
-        <MostWatchedPostsThisWeek />
-      </div>
-    </MainLayout>
+      <MainLayout>
+        <div className="space-y-12">
+          <PostsHighlights posts={posts} />
+          <MostWatchedPostsThisWeek posts={posts} />
+          <ContactBanner />
+        </div>
+      </MainLayout>
+    </>
   )
 }

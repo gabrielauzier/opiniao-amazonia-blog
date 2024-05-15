@@ -14,7 +14,6 @@ export function PostHighlight({ imgUrl, title }: PostHighlightProps) {
         src={imgUrl}
         fill={true}
         alt=""
-        priority
         className="rounded object-cover object-center"
       />
       <div className="absolute top-0 h-full w-full rounded bg-gradient-to-t from-black from-20% via-black to-white/50 to-95% opacity-25"></div>

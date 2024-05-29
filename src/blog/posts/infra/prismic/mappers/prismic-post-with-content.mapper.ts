@@ -12,7 +12,7 @@ export class PrismicPostWithContentMapper {
       author: 'Gabriel Auzier',
       categories: raw.tags,
       date: raw.first_publication_date,
-      excerpt: prismicH.asText(raw.data.content),
+      excerpt: prismicH.asText(raw.data.content).substring(0, 200),
       content: prismicH.asHTML(raw.data.content),
       imgUrl: raw.data.image.url ?? '',
     }

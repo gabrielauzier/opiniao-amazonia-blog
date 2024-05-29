@@ -8,6 +8,7 @@ import { makeFindManyPosts } from '@/blog/posts/presentation/factories/posts-use
 import { MostWatchedPostsThisWeek } from '@/blog/posts/presentation/components/most-watched/most-watched-posts-this-week'
 import { PostsHighlights } from '@/blog/posts/presentation/components/highlights/posts-highlights'
 import { Post } from '@/blog/posts/domain/models/post'
+import { PostsList } from '@/blog/posts/presentation/components/listing/posts-list'
 
 interface PostsPageProps {
   posts: Post[]
@@ -26,11 +27,7 @@ export default function PostsPage({ posts }: PostsPageProps) {
         <title>Opinião Amazônia • Início</title>
       </Head>
       <MainLayout>
-        <div className="space-y-12">
-          <PostsHighlights posts={[]} />
-          <MostWatchedPostsThisWeek posts={posts} />
-          <ContactBanner />
-        </div>
+        <PostsList posts={posts} />
       </MainLayout>
     </>
   )

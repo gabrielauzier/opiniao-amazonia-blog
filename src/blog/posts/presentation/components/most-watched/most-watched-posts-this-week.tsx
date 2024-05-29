@@ -13,8 +13,6 @@ interface MostWatchedPostsThisWeekProps {
 export function MostWatchedPostsThisWeek({
   posts,
 }: MostWatchedPostsThisWeekProps) {
-  console.log(posts)
-
   return (
     <section className="flex flex-col gap-3">
       <Separator />
@@ -42,42 +40,6 @@ export function MostWatchedPostsThisWeek({
             key={post.id}
           />
         ))}
-
-        {/* <PostPreview
-          categories={['Cultura']}
-          date="12/10/2023"
-          excerpt="Lorem ipsum"
-          imgUrl="/manaus.jpg"
-          slug="post1"
-          title=" A Amazônia: Um patrimônio da humanidade que precisa ser protegido"
-        />
-
-        <PostPreview
-          categories={['Cultura']}
-          date="12/10/2023"
-          excerpt="Lorem ipsum"
-          imgUrl="/example1.jpg"
-          slug="post1"
-          title="O futuro da Amazônia: Entre o desenvolvimento e a preservação"
-        />
-
-        <PostPreview
-          categories={['Cultura']}
-          date="12/10/2023"
-          excerpt="Lorem ipsum"
-          imgUrl="/example1.jpg"
-          slug="post1"
-          title="O futuro da Amazônia: Entre o desenvolvimento e a preservação"
-        />
-
-        <PostPreview
-          categories={['Cultura']}
-          date="12/10/2023"
-          excerpt="Lorem ipsum"
-          imgUrl="/example1.jpg"
-          slug="post1"
-          title="O futuro da Amazônia: Entre o desenvolvimento e a preservação"
-        /> */}
       </div>
     </section>
   )

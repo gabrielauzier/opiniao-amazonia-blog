@@ -6,12 +6,17 @@ import {
   CarouselItem,
 } from '@/common/presentation/components/ui/carousel'
 import { PostCarouselHighlight } from './post-carousel-highlight'
+import Autoplay from 'embla-carousel-autoplay'
 
 type PostsCarouselProps = ComponentProps<'div'>
 
 export function PostsCarousel({ ...props }: PostsCarouselProps) {
   return (
-    <Carousel className={props.className}>
+    <Carousel
+      className={props.className}
+      plugins={[Autoplay({ delay: 3000 })]}
+      opts={{ loop: true }}
+    >
       <CarouselContent className="h-[32rem]">
         <CarouselItem>
           <PostCarouselHighlight

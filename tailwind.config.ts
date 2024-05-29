@@ -1,19 +1,23 @@
 import type { Config } from 'tailwindcss'
 
-const config: Config = {
-  content: ['./src/**/*.tsx'],
+const config = {
+  darkMode: ['class'],
+  content: [
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+  ],
+  prefix: '',
   theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
     extend: {
-      fontSize: {
-        xxs: '10px',
-        xs: '12px',
-      },
-
-      background: {
-        shadow:
-          'linear-gradient(0deg,#000 0,rgba(0,0,0,0) 100%) no-repeat padding-box',
-      },
-
       backgroundImage: {
         shadow:
           'linear-gradient(0deg,#000 0,rgba(0,0,0,0) 100%) no-repeat padding-box',
@@ -21,7 +25,7 @@ const config: Config = {
         banner2:
           "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('/encontro-das-aguas.jpg')",
         contact:
-          "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.05)), url('/manaus4.jpg')",
+          "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.05)), url('/rio.jpg')",
         newsletter:
           "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url('/newsletter.jpg')",
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -38,64 +42,63 @@ const config: Config = {
         'categories-manaus':
           "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.05)), url('https://images.pexels.com/photos/7903925/pexels-photo-7903925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
       },
-
-      boxShadow: {
-        '3xl': '0 0 10px rgba(0, 0, 0, 0.25)',
-        '4xl': '0 0 65px rgba(0, 0, 0, 0.15)',
-      },
-
       colors: {
-        'surface-seconday': '#F8F8F8',
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
       },
-
-      maxWidth: {
-        body: '1120px',
-        header: '1120px',
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
       },
-
-      maxHeight: {
-        body: '100vh',
-      },
-
-      height: {
-        body: 'calc(100vh - 36rem)',
-        header: '5rem',
-      },
-
-      marginTop: {
-        999: '5rem',
-      },
-
-      padding: {
-        body: 'minmax(480px, 512px)',
-      },
-
       keyframes: {
-        slideDownAndFade: {
-          from: { opacity: '0', transform: 'translateY(-2px)' },
-          to: { opacity: '1', transform: 'translateY(0)' },
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
         },
-        slideUpAndFade: {
-          from: { opacity: '0', transform: 'translateY(2px)' },
-          to: { opacity: '1', transform: 'translateY(0)' },
-        },
-        slideRightAndFade: {
-          from: { opacity: '0', transform: 'translateX(-2px)' },
-          to: { opacity: '1', transform: 'translateX(0)' },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
         },
       },
-
       animation: {
-        slideDownAndFade:
-          'slideDownAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
-        slideUpAndFade: 'slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
-        slideRightAndFade:
-          'slideRightAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
-        slideUpAndFadeFaster:
-          'slideUpAndFade 100ms cubic-bezier(0.16, 1, 0.3, 1)',
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
       },
     },
   },
-}
+  plugins: [require('tailwindcss-animate')],
+} satisfies Config
 
 export default config

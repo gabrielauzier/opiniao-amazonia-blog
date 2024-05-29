@@ -1,3 +1,34 @@
-import PostsPage from '@/blog/posts/presentation/pages/posts'
+import Head from 'next/head'
+import { GetStaticProps } from 'next'
 
-export default () => PostsPage()
+import { MainLayout } from '@/common/presentation/components/layouts/main.layout'
+import { ContactBanner } from '@/common/presentation/components/home/contact-banner'
+
+import { makeFindManyPosts } from '@/blog/posts/presentation/factories/posts-usecases.factory'
+import { MostWatchedPostsThisWeek } from '@/blog/posts/presentation/components/most-watched/most-watched-posts-this-week'
+import { PostsHighlights } from '@/blog/posts/presentation/components/highlights/posts-highlights'
+import { Post } from '@/blog/posts/domain/models/post'
+import { PostsList } from '@/blog/posts/presentation/components/listing/posts-list'
+
+interface PostsPageProps {
+  posts: Post[]
+}
+
+export const getStaticProps = (async () => {
+  const posts = await makeFindManyPosts().execute()
+
+  return { props: { posts } }
+}) satisfies GetStaticProps<PostsPageProps>
+
+export default function PostsPage({ posts }: PostsPageProps) {
+  return (
+    <>
+      <Head>
+        <title>Opinião Amazônia • Início</title>
+      </Head>
+      <MainLayout>
+        <PostsList posts={posts} />
+      </MainLayout>
+    </>
+  )
+}

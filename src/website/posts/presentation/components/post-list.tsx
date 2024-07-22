@@ -7,7 +7,7 @@ interface PostListProps {
 
 export function PostList({ posts }: PostListProps) {
   return (
-    <section className="mx-auto mt-0 max-w-[28rem]   px-5 lg:max-w-body lg:px-0">
+    <section className="lg:max-w-body mx-auto mt-0   max-w-[28rem] px-5 lg:px-0">
       <div className="mb-5">
         <h2 className="text-xl font-light text-zinc-800">Mais recentes</h2>
         <span className="text-sm text-zinc-600">

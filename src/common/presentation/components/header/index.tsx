@@ -20,17 +20,17 @@ export function Header() {
 
       <Navigation />
 
-      <div className="text-primary-foreground bg-sky-900 shadow-sm">
+      {/* <div className="bg-sky-900 text-primary-foreground shadow-sm">
         <div className="m-auto flex max-w-[900px] items-center justify-between py-2">
           <p>
             Oferta Especial de lançamento: inscreva-se gratuitamente para
             receber nossa newsletter
           </p>
-          <Button className="text-foreground bg-yellow-400 text-xs font-bold hover:bg-yellow-300">
+          <Button className="bg-yellow-400 text-xs font-bold text-foreground hover:bg-yellow-300">
             INSCREVA-SE
           </Button>
         </div>
-      </div>
+      </div> */}
     </header>
   )
 }

@@ -10,10 +10,14 @@ export function Footer() {
           <Brand></Brand>
 
           <div className="flex gap-5">
-            <FaFacebook className="h-6 w-6 text-white" />
-            <BiLogoTwitter className="h-6 w-6 text-white" />
-            <BiLogoInstagram className="h-6 w-6 text-white" />
-            <BiLogoYoutube className="h-6 w-6 text-white" />
+            <a href="https://www.facebook.com/profile.php?id=61562060516546&mibextid=ZbWKwL">
+              <FaFacebook className="h-6 w-6 text-white" />
+            </a>
+            {/* <BiLogoTwitter className="h-6 w-6 text-white" /> */}
+            <a href="https://www.instagram.com/opiniaoamazonia?igsh=cjY1bnVjMWo1OG9u">
+              <BiLogoInstagram className="h-6 w-6 text-white" />
+            </a>
+            {/* <BiLogoYoutube className="h-6 w-6 text-white" /> */}
           </div>
         </div>
       </div>
